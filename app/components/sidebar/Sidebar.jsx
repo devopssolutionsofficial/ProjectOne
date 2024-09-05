@@ -1,7 +1,13 @@
+"use client"
 import { dataSideBar } from '@/data'
 import BtnLoginRegistrer from '../BtnLoginRegistrer'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Sidebar() {
+
+    const path = usePathname()
+
     return (
 
         <div className='flex flex-col justify-between h-full mt-6 md:mt-0'>
@@ -20,10 +26,10 @@ export default function Sidebar() {
                     {dataSideBar.map((data) => (
                         <div className='w-full' key={data.id}>
                             <div className="flex gap-2 flex-col w-full">
-                                <section className='flex gap-2 p-4 transition hover:bg-slate-200 border mb-8 cursor-pointer rounded-lg'>
+                                <Link href={data.href} className={`${path === data.href ? 'bg-slate-300': ''} flex gap-2 p-4 transition hover:bg-slate-200 border mb-8 cursor-pointer rounded-lg`}>
                                     {data.label}
                                     {data.icon}
-                                </section>
+                                </Link>
                             </div>
                         </div>
                     ))}

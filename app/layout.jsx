@@ -1,4 +1,4 @@
-import { Inter, Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/sidebar/Sidebar";
 
@@ -8,7 +8,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Wiki",
-  description: "Wiki by Devos Solution Official",
+  description: "Wiki by Devops Solution Official",
 };
 
 export default function RootLayout({ children }) {
